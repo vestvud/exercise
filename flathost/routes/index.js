@@ -85,13 +85,6 @@ router.get('/', function(req, res) {
                             text: "Donec fringilla massa in imperdiet pretium. Etiam vel ligula sagittis, consectetur est at, mattis nibh. Aliquam dignissim consequat sapien id eleifend. Integer tincidunt vitae sapien vel semper. Mauris vitae suscipit sapien. Etiam imperdiet tempus eros in facilisis. Cras quis dolor ultrices, vehicula mi vel, sollicitudin orci. ",
                             time: "10",
                             image: ""
-                        },
-                        {
-                            id: "comment2",
-                            author: "Michael",
-                            text: "Donec fringilla massa in imperdiet pretium. Etiam vel ligula sagittis, consectetur est at, mattis nibh. Aliquam dignissim consequat sapien id eleifend. Integer tincidunt vitae sapien vel semper. Mauris vitae suscipit sapien. Etiam imperdiet tempus eros in facilisis. Cras quis dolor ultrices, vehicula mi vel, sollicitudin orci. ",
-                            time: "10",
-                            image: ""
                         }
                     ]
                 }
