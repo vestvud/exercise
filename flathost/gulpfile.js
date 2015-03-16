@@ -8,16 +8,16 @@ var gulp = require('gulp'),
     rename = require('gulp-rename');
 
 var paths = {
-    dist: {
-        js: "./public/dist/js*.js",
+    src: {
+        js: "./public/src/js*.js",
         less: {
-            layouts: "./public/dist/less/layouts/main.less",
-            blocks: "./public/dist/less/blocks/*.less",
-            mixin: "./public/dist/less/mixins/*.less",
-            spriteLess: "./public/dist/less/mixins/sprite/",
-            spriteTemplate: "./public/dist/less/mixins/sprite/template/sprite.mustache"
+            layouts: "./public/src/less/layouts/main.less",
+            blocks: "./public/src/less/blocks/*.less",
+            mixin: "./public/src/less/mixins/*.less",
+            spriteLess: "./public/src/less/mixins/sprite/",
+            spriteTemplate: "./public/src/less/mixins/sprite/template/sprite.mustache"
         },
-        images: "./public/dist/img/*.png"
+        images: "./public/src/img/*.png"
     },
     bld: {
         css: "./public/bld/css/",
@@ -28,13 +28,13 @@ var paths = {
 /*sprite*/
 gulp.task('sprite', function () {
     var spriteData =
-        gulp.src(paths.dist.images)
+        gulp.src(paths.src.images)
             .pipe( spritesmith({
                 imgName: 'sprite.png',
                 cssName: 'sprite.less',
                 cssFormat: 'less',
                 algorithm: 'binary-tree',
-                cssTemplate: paths.dist.less.spriteTemplate,
+                cssTemplate: paths.src.less.spriteTemplate,
                 cssVarMap: function(sprite) {
                     sprite.name = 's-' + sprite.name
                 }
@@ -43,14 +43,14 @@ gulp.task('sprite', function () {
     spriteData.img
         .pipe(gulp.dest(paths.bld.images));
     spriteData.css
-        .pipe(gulp.dest(paths.dist.less.spriteLess));
+        .pipe(gulp.dest(paths.src.less.spriteLess));
 });
 /*less*/
 gulp.task('less', function () {
-    gulp.src(paths.dist.less.layouts)
+    gulp.src(paths.src.less.layouts)
         .pipe(plumber())
         .pipe(less({
-            paths: [paths.dist.less]
+            paths: [paths.src.less]
         }))
         .pipe(rename('style.css'))
         .pipe(csso())
@@ -58,11 +58,11 @@ gulp.task('less', function () {
         .pipe(gulp.dest(paths.bld.css));
 });
 gulp.task('less:watch', function(){
-    gulp.watch([paths.dist.less.blocks, paths.dist.less.mixin], ['less']);
+    gulp.watch([paths.src.less.blocks, paths.src.less.mixin], ['less']);
 });
 /*js*/
 gulp.task('script', function() {
-    gulp.src(paths.dist.js)
+    gulp.src(paths.src.js)
         .pipe(concat('script.js'))
         .pipe(uglify())
         .pipe(rename('script.min.js'))
@@ -71,8 +71,8 @@ gulp.task('script', function() {
 
 /*watcher*/
 gulp.task('watch', function() {
-    gulp.watch(paths.dist.js, ['script']);
-    gulp.watch(paths.dist.less.layouts, ['less']);
+    gulp.watch(paths.src.js, ['script']);
+    gulp.watch(paths.src.less.layouts, ['less']);
 });
 
 /*jade*/
