@@ -1,0 +1,16 @@
+<section class="post">
+    <header class="post__title">
+        <h1>{{post.title}}</h1>
+    </header>
+    <div class="post__info">
+        Posted by <a href="#" class="post__link">{{post.author}}</a> on {{post.date}} <a href="#" class="post__link">{{post.comments}}</a>
+    </div>
+    <div class="post__image">
+        <img src="{{post.image}}" alt=""/>
+    </div>
+    <div class="post__text">
+        {% for item in post.text %}
+        <p class="post__par">{{ item.par }}</p>
+        {% endfor %}
+    </div>
+</section>

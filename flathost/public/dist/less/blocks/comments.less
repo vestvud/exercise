@@ -1,0 +1,74 @@
+@import (reference) "../mixins/clearfix";
+.comments {
+  margin-bottom: 98px;
+}
+.comment {
+  margin-top: 20px;
+  display: block;
+  &__img {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    float: left;
+    background: #d2d5d7;
+  }
+  &__column {
+    margin-left: 70px;
+  }
+  &__author {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+  &__answer {
+    color: #58cf83;
+  }
+  &__info {
+    margin-top: 6px;
+  }
+  &__date {
+    color: #9d9d9d;
+  }
+  &__txt {
+    line-height: 22px;
+  }
+  &__responses {
+    padding-left: 20px;
+  }
+  &:after {
+    .clear();
+  }
+}
+.comments-form {
+  margin-top: 20px;
+  &__fields {
+    text-align: justify;
+    &:after {
+      content: "";
+      height: 1px;
+      width: 100%;
+      display: inline-block;
+    }
+  }
+  &__field {
+    width: 336px;
+    height: 44px;
+    display: inline-block;
+  }
+  &__text {
+    display: inline-block;
+    width: 700px;
+    height: 116px;
+    padding: 0;
+    margin: 20px 0;
+    box-sizing: border-box;
+  }
+  &__submit {
+    float: right;
+    width: 240px;
+    height: 60px;
+    text-transform: none;
+  }
+  &:after {
+    .clear();
+  }
+}

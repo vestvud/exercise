@@ -1,0 +1,7 @@
+{% macro lists(array) %}
+<ul class="sub-list">
+    {% for item in array %}
+    <li class="sub-list__item"><a href="#">{{ item.txt }}</a></li>
+    {% endfor %}
+</ul>
+{% endmacro %}

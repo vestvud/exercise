@@ -1,0 +1,9 @@
+@import (reference) "../mixins/clearfix";
+.header {
+  height: 120px;
+  line-height: 120px;
+  position: relative;
+  &:after {
+    .clear;
+  }
+}

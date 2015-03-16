@@ -1,0 +1,16 @@
+@import (reference) "../mixins/clearfix";
+
+.footer {
+  position: relative;
+  height: 300px;
+  &:after {
+    .clear;
+  }
+}
+.copyright {
+  position: absolute;
+  bottom: 54px;
+  left: 10px;
+  color: #fff;
+  font-size: 12px;
+}

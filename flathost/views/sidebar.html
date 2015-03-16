@@ -1,0 +1,26 @@
+<article class="list-block">
+    <header>
+        <h2 class="title2 title2_categories">Categories</h2>
+    </header>
+    {% import "list.html" as list_macro %}
+
+    {{ list_macro.lists(categories) }}
+</article>
+
+<article class="list-block list-block_text-widget">
+    <header>
+        <h2 class="title2 title2_text-widget">Text Widget</h2>
+    </header>
+    {% import "list.html" as list_macro %}
+
+    {{ list_macro.lists(text_widgets) }}
+</article>
+
+<article class="list-block list-block_archives">
+    <header>
+        <h2 class="title2 title2_archives">Archives</h2>
+    </header>
+    {% import "list.html" as list_macro %}
+
+    {{ list_macro.lists(archives) }}
+</article>

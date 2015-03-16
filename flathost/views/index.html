@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <title>welcome to </title>
+    <link rel="stylesheet" href="/bld/css/style.min.css"/>
+</head>
+<body>
+    <header class="row row_dark">
+        <div class="header container11">
+            {% include "header.html" %}
+        </div>
+    </header>
+    <article class="row">
+        <div class="container11">
+            <div class="column8">
+                {% include "content.html" %}
+            </div>
+            <aside class="column2">
+                {% include "sidebar.html" %}
+            </aside>
+        </div>
+    </article>
+    <footer class="row row_dark">
+        <div class="container11 footer">
+        {% include "footer.html" %}
+        </div>
+    </footer>
+</body>
+</html>

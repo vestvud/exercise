@@ -1,0 +1,58 @@
+<h2 class="title2">{{comments.count}} Comments</h2>
+
+<div class="comments-form">
+    <form action="">
+        <div class="comments-form__fields">
+            <input class="comments-form__field" type="text"/>
+            <input class="comments-form__field" type="text"/>
+        </div>
+        <textarea class="comments-form__text" name="" id="" cols="30" rows="10"></textarea>
+        <button class="btn btn_green comments-form__submit">Submit Comment</button>
+    </form>
+</div>
+
+<ul class="comments">
+    {% for item in comments.items %}
+    <li class="comment">
+        <div class="comment__img">
+            {{item.img}}
+        </div>
+        <div class="comment__column">
+            <div class="comment__author">
+                {{item.author}}
+            </div>
+            <div class="comment__txt">
+                {{item.text}}
+            </div>
+            <div class="comment__info">
+                <span class="comment__date">{{item.time}} minutes ago.</span>
+                <a href="#" class="comment__answer">Reply</a>
+            </div>
+        </div>
+
+
+        <ul class="comment__responses">
+            {% for response in item.responses %}
+            <li class="comment">
+                <div class="comment__img">
+                    {{response.img}}
+                </div>
+                <div class="comment__column">
+                    <div class="comment__author">
+                        {{response.author}}
+                    </div>
+                    <div class="comment__txt">
+                        {{response.text}}
+                    </div>
+                    <div class="comment__info">
+                        <span class="comment__date">{{response.time}} minutes ago.</span>
+                        <a href="#" class="comment__answer">Reply</a>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </li>
+    {% endfor %}
+</ul>
+

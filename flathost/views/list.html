@@ -1,0 +1,7 @@
+{% macro lists(array) %}
+<ul class="list">
+    {% for item in array %}
+    <li class="list__item"><a href="#">{{ item.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endmacro %}

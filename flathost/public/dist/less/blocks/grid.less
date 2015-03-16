@@ -1,0 +1,30 @@
+@import (reference) "../mixins/clearfix";
+@iterations: 12;
+.column(@width) {
+  width: @width;
+  margin: 0 10px;
+  float: left;
+  height: 100%;
+}
+.generate-columns(12);
+.generate-columns(@n, @i: 0) when (@i =< @n) {
+  .column@{i} {
+    .column( 60 + 80px*@i );
+  }
+  .generate-columns(@n, (@i + 1));
+}
+.container11 {
+  width: 960px;
+  margin: auto;
+  &:after {
+    .clear();
+  }
+}
+.row {
+  &:after {
+    .clear();
+  }
+  &_dark {
+    background: #363f48;
+  }
+}

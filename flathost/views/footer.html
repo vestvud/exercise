@@ -1,0 +1,44 @@
+<div class="column1">
+    <h3 class="title3">Call us</h3>
+    {% import "sub-list.html" as list_macro %}
+
+    {{ list_macro.lists(phones) }}
+</div>
+
+<div class="column1">
+    <h3 class="title3">Follow us</h3>
+    {% import "sub-list.html" as list_macro %}
+
+    {{ list_macro.lists(follows) }}
+</div>
+
+<div class="column1">
+    <h3 class="title3">Email us</h3>
+    {% import "sub-list.html" as list_macro %}
+
+    {{ list_macro.lists(emails) }}
+</div>
+
+<div class="column1">
+    <h3 class="title3">Company</h3>
+    {% import "sub-list.html" as list_macro %}
+
+    {{ list_macro.lists(company) }}
+</div>
+
+<div class="column1">
+    <h3 class="title3">Legal terms</h3>
+    {% import "sub-list.html" as list_macro %}
+
+    {{ list_macro.lists(legal_terms) }}
+</div>
+
+<div class="column1">
+    <h3 class="title3">live chat</h3>
+    <button class="btn btn_green btn_chat">Chat with us</button>
+</div>
+
+<div class="copyright">
+    Copyright © 2013. Flathost Inc
+</div>
+<a href="#" class="logo_bottom"></a>
